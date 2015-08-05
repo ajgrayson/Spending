@@ -15,6 +15,16 @@
 		0F90873A1B716EC100B10A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F9087381B716EC100B10A4C /* LaunchScreen.storyboard */; };
 		0F9087451B716EC100B10A4C /* SpendingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087441B716EC100B10A4C /* SpendingTests.swift */; };
 		0F9087501B716EC100B10A4C /* SpendingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90874F1B716EC100B10A4C /* SpendingUITests.swift */; };
+		0F90875E1B71E3DB00B10A4C /* AddTransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90875D1B71E3DB00B10A4C /* AddTransactionTableViewController.swift */; };
+		0F9087601B71E3F200B10A4C /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90875F1B71E3F200B10A4C /* TransactionTableViewCell.swift */; };
+		0F9087621B71E40C00B10A4C /* TransactionListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087611B71E40C00B10A4C /* TransactionListTableViewController.swift */; };
+		0F9087671B71E65C00B10A4C /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087631B71E65C00B10A4C /* Account+CoreDataProperties.swift */; };
+		0F9087681B71E65C00B10A4C /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087641B71E65C00B10A4C /* Account.swift */; };
+		0F9087691B71E65C00B10A4C /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087651B71E65C00B10A4C /* Transaction+CoreDataProperties.swift */; };
+		0F90876A1B71E65C00B10A4C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087661B71E65C00B10A4C /* Transaction.swift */; };
+		0F90876E1B71E68700B10A4C /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90876D1B71E68700B10A4C /* TransactionService.swift */; };
+		0F9087701B71E69000B10A4C /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90876F1B71E69000B10A4C /* AccountService.swift */; };
+		0F9087721B71F71A00B10A4C /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9087711B71F71A00B10A4C /* AppNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		0F90874B1B716EC100B10A4C /* SpendingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpendingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F90874F1B716EC100B10A4C /* SpendingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingUITests.swift; sourceTree = "<group>"; };
 		0F9087511B716EC100B10A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F90875D1B71E3DB00B10A4C /* AddTransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTransactionTableViewController.swift; sourceTree = "<group>"; };
+		0F90875F1B71E3F200B10A4C /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		0F9087611B71E40C00B10A4C /* TransactionListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionListTableViewController.swift; sourceTree = "<group>"; };
+		0F9087631B71E65C00B10A4C /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Account+CoreDataProperties.swift"; path = "../Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0F9087641B71E65C00B10A4C /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = ../Account.swift; sourceTree = "<group>"; };
+		0F9087651B71E65C00B10A4C /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Transaction+CoreDataProperties.swift"; path = "../Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0F9087661B71E65C00B10A4C /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = ../Transaction.swift; sourceTree = "<group>"; };
+		0F90876D1B71E68700B10A4C /* TransactionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		0F90876F1B71E69000B10A4C /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		0F9087711B71F71A00B10A4C /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +119,8 @@
 		0F90872B1B716EC100B10A4C /* Spending */ = {
 			isa = PBXGroup;
 			children = (
+				0F90876C1B71E67B00B10A4C /* Services */,
+				0F90876B1B71E66100B10A4C /* Models */,
 				0F90872C1B716EC100B10A4C /* AppDelegate.swift */,
 				0F90872E1B716EC100B10A4C /* ViewController.swift */,
 				0F9087301B716EC100B10A4C /* Main.storyboard */,
@@ -106,6 +128,10 @@
 				0F9087381B716EC100B10A4C /* LaunchScreen.storyboard */,
 				0F90873B1B716EC100B10A4C /* Info.plist */,
 				0F9087331B716EC100B10A4C /* Spending.xcdatamodeld */,
+				0F90875D1B71E3DB00B10A4C /* AddTransactionTableViewController.swift */,
+				0F90875F1B71E3F200B10A4C /* TransactionTableViewCell.swift */,
+				0F9087611B71E40C00B10A4C /* TransactionListTableViewController.swift */,
+				0F9087711B71F71A00B10A4C /* AppNavigationController.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -126,6 +152,26 @@
 				0F9087511B716EC100B10A4C /* Info.plist */,
 			);
 			path = SpendingUITests;
+			sourceTree = "<group>";
+		};
+		0F90876B1B71E66100B10A4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0F9087631B71E65C00B10A4C /* Account+CoreDataProperties.swift */,
+				0F9087641B71E65C00B10A4C /* Account.swift */,
+				0F9087651B71E65C00B10A4C /* Transaction+CoreDataProperties.swift */,
+				0F9087661B71E65C00B10A4C /* Transaction.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0F90876C1B71E67B00B10A4C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0F90876D1B71E68700B10A4C /* TransactionService.swift */,
+				0F90876F1B71E69000B10A4C /* AccountService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +304,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9087671B71E65C00B10A4C /* Account+CoreDataProperties.swift in Sources */,
+				0F90875E1B71E3DB00B10A4C /* AddTransactionTableViewController.swift in Sources */,
+				0F9087601B71E3F200B10A4C /* TransactionTableViewCell.swift in Sources */,
+				0F9087621B71E40C00B10A4C /* TransactionListTableViewController.swift in Sources */,
+				0F90876A1B71E65C00B10A4C /* Transaction.swift in Sources */,
 				0F90872F1B716EC100B10A4C /* ViewController.swift in Sources */,
+				0F90876E1B71E68700B10A4C /* TransactionService.swift in Sources */,
+				0F9087691B71E65C00B10A4C /* Transaction+CoreDataProperties.swift in Sources */,
+				0F9087681B71E65C00B10A4C /* Account.swift in Sources */,
+				0F9087701B71E69000B10A4C /* AccountService.swift in Sources */,
 				0F9087351B716EC100B10A4C /* Spending.xcdatamodeld in Sources */,
+				0F9087721B71F71A00B10A4C /* AppNavigationController.swift in Sources */,
 				0F90872D1B716EC100B10A4C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
