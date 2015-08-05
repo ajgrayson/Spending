@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OZy-g4-2Lg">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
         </mutableArray>
     </customFonts>
@@ -23,13 +23,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pg-ox-m0L">
-                                <rect key="frame" x="20" y="98" width="560" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$234.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pg-ox-m0L">
+                                <rect key="frame" x="20" y="122" width="560" height="53"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="102" id="75M-go-RyN"/>
                                     <constraint firstAttribute="height" constant="100" id="On0-Kc-Thk"/>
                                     <constraint firstAttribute="height" constant="100" id="UFb-Ba-M3e"/>
+                                    <constraint firstAttribute="height" constant="53" id="ZY8-gY-QQ3"/>
                                     <constraint firstAttribute="height" constant="102" id="bBa-fV-pUK"/>
+                                    <constraint firstAttribute="height" constant="78" id="yQX-PA-Nfd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="48"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -38,33 +41,27 @@
                                     <mask key="constraints">
                                         <exclude reference="75M-go-RyN"/>
                                         <exclude reference="On0-Kc-Thk"/>
+                                        <exclude reference="UFb-Ba-M3e"/>
                                         <exclude reference="bBa-fV-pUK"/>
+                                        <exclude reference="yQX-PA-Nfd"/>
                                     </mask>
                                 </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BALANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08a-LE-qBZ">
-                                <rect key="frame" x="251" y="98" width="98" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="4pg-ox-m0L" secondAttribute="trailing" id="1q7-Wt-CBF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="08a-LE-qBZ" secondAttribute="trailing" constant="231" id="347-gX-3bM"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4pg-ox-m0L" secondAttribute="leading" id="8ht-K4-h3y"/>
                             <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="DJk-qa-eky"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pg-ox-m0L" secondAttribute="trailing" id="JUY-LW-5DK"/>
-                            <constraint firstItem="08a-LE-qBZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="231" id="MDn-WV-FoV"/>
+                            <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="NxQ-lC-cAb"/>
+                            <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="58" id="QJJ-EN-c0V"/>
                             <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="WcT-XW-9rX"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4pg-ox-m0L" secondAttribute="leading" id="Z88-gi-HPt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pg-ox-m0L" secondAttribute="trailing" id="diV-FO-rzw"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4pg-ox-m0L" secondAttribute="leading" id="ge7-4f-HKH"/>
                             <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="j0o-nG-Kho"/>
-                            <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="08a-LE-qBZ" secondAttribute="bottom" constant="-21" id="nFE-O4-Vlr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4pg-ox-m0L" secondAttribute="trailing" id="nbb-M8-xC6"/>
-                            <constraint firstItem="08a-LE-qBZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="rmo-d8-2Aj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4pg-ox-m0L" secondAttribute="leading" id="z0r-9W-5R3"/>
                             <constraint firstItem="4pg-ox-m0L" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="zFX-bC-GJp"/>
                         </constraints>
@@ -72,7 +69,9 @@
                             <mask key="constraints">
                                 <exclude reference="1q7-Wt-CBF"/>
                                 <exclude reference="8ht-K4-h3y"/>
+                                <exclude reference="DJk-qa-eky"/>
                                 <exclude reference="JUY-LW-5DK"/>
+                                <exclude reference="NxQ-lC-cAb"/>
                                 <exclude reference="WcT-XW-9rX"/>
                                 <exclude reference="Z88-gi-HPt"/>
                                 <exclude reference="diV-FO-rzw"/>
@@ -391,6 +390,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LiL-H4-iZK"/>
+        <segue reference="VAf-uj-ozy"/>
     </inferredMetricsTieBreakers>
 </document>
