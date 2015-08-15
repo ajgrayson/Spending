@@ -15,9 +15,9 @@ class TransactionListTableViewController: UITableViewController {
     
     var account : Account!
     
-    private var transactions : [Transaction]!
-    
     private var transactionService : TransactionService!
+    
+    private var resultsController : NSFetchedResultsController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,31 +36,34 @@ class TransactionListTableViewController: UITableViewController {
     }
 
     func loadTransactions() {
-        transactions = transactionService.getTransactions(account)
+        resultsController = transactionService.getSections(account)
         tableView.reloadData()
     }
     
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if resultsController == nil || resultsController.sections == nil {
+            return 0
+        }
+        return resultsController.sections!.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return transactions.count
+        if resultsController == nil || resultsController.sections == nil {
+            return 0
+        }
+        return resultsController.sections![section].numberOfObjects
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("transactionCell") as! TransactionTableViewCell
         
-        let transaction = transactions[indexPath.row]
-        
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "EEEE, d MMMM YYYY"
+        let nsmo = resultsController.sections![indexPath.section].objects![indexPath.row]
+        let transaction = nsmo as! Transaction
         
         cell.descriptionLabel.text = transaction.title
-        cell.dateLabel.text = formatter.stringFromDate(transaction.date!)
         
         let amountFormatter = NSNumberFormatter()
         amountFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
@@ -69,6 +72,64 @@ class TransactionListTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if resultsController == nil || resultsController.sections == nil {
+            return ""
+        }
+        
+        let sectionObject = resultsController.sections![section]
+        let total = getTotal(sectionObject.objects as! [Transaction])
+        
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
+        let firstRow = sectionObject.objects![0] as! Transaction
+        
+        let formatter = NSDateFormatter()
+        //formatter.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
+        //formatter.timeZone = NSDate
+        
+        //let date = formatter.dateFromString(name)
+
+        formatter.dateFormat = "EEEE, d MMM yy"
+        return formatter.stringFromDate(firstRow.date!) + " (spent: " + numberFormatter.stringFromNumber(total)! + ")"
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 40
+    }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
+    
+    func getTotal(rows: [Transaction]) -> NSDecimalNumber {
+        var total : NSDecimalNumber = 0
+        for var i = 0; i < rows.count; i++ {
+            if rows[i].amount!.integerValue < 0 {
+                total = total.decimalNumberByAdding(rows[i].amount!)
+            }
+        }
+        return total.decimalNumberByMultiplyingBy(-1)
+    }
+    
+//
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("headerCell") as! TransactionTableHeaderCell
+//        
+//        let name = resultsController.sections![section].name
+//        
+//        let formatter = NSDateFormatter()
+//        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss Z"
+//        
+//        let date = formatter.dateFromString(name)
+//        
+//        formatter.dateFormat = "EEEE d MMMM yyyy"
+//        cell.titleLabel. = formatter.stringFromDate(date!)
+//        
+//        return cell
+//    }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction] {
         
@@ -84,7 +145,7 @@ class TransactionListTableViewController: UITableViewController {
     }
     
     func deleteRow(indexPath: NSIndexPath) {
-        let transaction = transactions[indexPath.row]
+        let transaction = getTransaction(indexPath)
         displayDeleteConfirmation(transaction)
     }
     
@@ -122,7 +183,7 @@ class TransactionListTableViewController: UITableViewController {
             
             nvc.context = context
             nvc.account = account
-            nvc.transaction = transactions[tableView.indexPathForSelectedRow!.row]
+            nvc.transaction = getTransaction(tableView.indexPathForSelectedRow!)
         }
         if segue.identifier == "addTransaction2" {
             let nvc = segue.destinationViewController as! AddTransactionTableViewController
@@ -130,6 +191,10 @@ class TransactionListTableViewController: UITableViewController {
             nvc.context = context
             nvc.account = account
         }
+    }
+    
+    func getTransaction(indexPath: NSIndexPath) -> Transaction {
+        return resultsController.sections![indexPath.section].objects![indexPath.row] as! Transaction
     }
 
 }

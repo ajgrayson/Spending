@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2604FB1B7EDD3800B7C87C /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2604FA1B7EDD3800B7C87C /* Date+Utils.swift */; };
+		0F2604FD1B7EE3A100B7C87C /* TransactionTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2604FC1B7EE3A100B7C87C /* TransactionTableHeaderCell.swift */; };
 		0F90872D1B716EC100B10A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90872C1B716EC100B10A4C /* AppDelegate.swift */; };
 		0F90872F1B716EC100B10A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90872E1B716EC100B10A4C /* ViewController.swift */; };
 		0F9087321B716EC100B10A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F9087301B716EC100B10A4C /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F2604FA1B7EDD3800B7C87C /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		0F2604FC1B7EE3A100B7C87C /* TransactionTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableHeaderCell.swift; sourceTree = "<group>"; };
 		0F9087291B716EC100B10A4C /* Spending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F90872C1B716EC100B10A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F90872E1B716EC100B10A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,9 +133,11 @@
 				0F90873B1B716EC100B10A4C /* Info.plist */,
 				0F9087331B716EC100B10A4C /* Spending.xcdatamodeld */,
 				0F90875D1B71E3DB00B10A4C /* AddTransactionTableViewController.swift */,
-				0F90875F1B71E3F200B10A4C /* TransactionTableViewCell.swift */,
 				0F9087611B71E40C00B10A4C /* TransactionListTableViewController.swift */,
+				0F90875F1B71E3F200B10A4C /* TransactionTableViewCell.swift */,
+				0F2604FC1B7EE3A100B7C87C /* TransactionTableHeaderCell.swift */,
 				0F9087711B71F71A00B10A4C /* AppNavigationController.swift */,
+				0F2604FA1B7EDD3800B7C87C /* Date+Utils.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -310,11 +316,13 @@
 				0F9087601B71E3F200B10A4C /* TransactionTableViewCell.swift in Sources */,
 				0F9087621B71E40C00B10A4C /* TransactionListTableViewController.swift in Sources */,
 				0F90876A1B71E65C00B10A4C /* Transaction.swift in Sources */,
+				0F2604FB1B7EDD3800B7C87C /* Date+Utils.swift in Sources */,
 				0F90872F1B716EC100B10A4C /* ViewController.swift in Sources */,
 				0F90876E1B71E68700B10A4C /* TransactionService.swift in Sources */,
 				0F9087691B71E65C00B10A4C /* Transaction+CoreDataProperties.swift in Sources */,
 				0F9087681B71E65C00B10A4C /* Account.swift in Sources */,
 				0F9087701B71E69000B10A4C /* AccountService.swift in Sources */,
+				0F2604FD1B7EE3A100B7C87C /* TransactionTableHeaderCell.swift in Sources */,
 				0F9087351B716EC100B10A4C /* Spending.xcdatamodeld in Sources */,
 				0F9087721B71F71A00B10A4C /* AppNavigationController.swift in Sources */,
 				0F90872D1B716EC100B10A4C /* AppDelegate.swift in Sources */,
@@ -552,6 +560,7 @@
 				0F9087561B716EC100B10A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F9087571B716EC100B10A4C /* Build configuration list for PBXNativeTarget "SpendingTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +569,7 @@
 				0F9087591B716EC100B10A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F90875A1B716EC100B10A4C /* Build configuration list for PBXNativeTarget "SpendingUITests" */ = {
 			isa = XCConfigurationList;
@@ -568,6 +578,7 @@
 				0F90875C1B716EC100B10A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

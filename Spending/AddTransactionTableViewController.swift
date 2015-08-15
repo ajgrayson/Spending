@@ -16,6 +16,7 @@ class AddTransactionTableViewController: UITableViewController {
     @IBOutlet weak var amountTextField: UITextField!
     @IBOutlet weak var tagsTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var spendLabel: UILabel!
     
     @IBAction func saveButtonClicked(sender: UIBarButtonItem) {
         if save() {
@@ -38,6 +39,8 @@ class AddTransactionTableViewController: UITableViewController {
 
         transactionService = TransactionService(context: context)
         accountService = AccountService(context: context)
+        
+        typeSwitch.addTarget(self, action: "typeChanged:", forControlEvents: UIControlEvents.ValueChanged)
         
         loadTransaction()
     }
@@ -69,6 +72,22 @@ class AddTransactionTableViewController: UITableViewController {
             
             tagsTextField.text = transaction.tags
             datePicker.date = transaction.date!
+        } else {
+            descriptionTextField.becomeFirstResponder()
+        }
+        
+        updateTypeLabel(typeSwitch.on)
+    }
+    
+    func typeChanged(swtch: UISwitch) {
+        updateTypeLabel(swtch.on)
+    }
+    
+    func updateTypeLabel(on: Bool) {
+        if on {
+            spendLabel.text = "I received it"
+        } else {
+            spendLabel.text = "I spent it"
         }
     }
 
@@ -79,12 +98,13 @@ class AddTransactionTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 4
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if section == 1 {
+            return 2
+        }
         return 1
     }
     

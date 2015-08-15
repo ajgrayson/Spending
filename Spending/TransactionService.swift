@@ -81,4 +81,23 @@ class TransactionService : NSObject {
             return false
         }
     }
+    
+    func getSections(account: Account) -> NSFetchedResultsController? {
+        let fetchRequest = NSFetchRequest(entityName:"Transaction")
+        
+        fetchRequest.predicate = NSPredicate(format: "account = %@", argumentArray: [account])
+        
+        let sortDate = NSSortDescriptor(key: "date.dateWithoutTime", ascending: false)
+        fetchRequest.sortDescriptors = [sortDate]
+        
+        do {
+            let fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: "date.dateWithoutTime", cacheName: nil)
+            
+            try fetchResultsController.performFetch()
+            
+            return fetchResultsController
+        } catch {
+            return nil
+        }
+    }
 }
